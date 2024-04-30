@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link href="./style.css" rel="stylesheet">
+    <!--<link href="./icon.ico" rel="icon">-->
+    <title>Tetris</title>
+</head>
+<body oncontextmenu="return false;">
+    <h1>Tetris</h1>
+    <div style="display: flex; justify-content: center; align-items: top;">
+        <div style="background-color: black; color: white;">
+            <h3 class="press-start-2p-regular">&nbsp;SCORE&nbsp;</h3>
+            <span id="score" class="press-start-2p-regular"></span>
+            <br><br>
+            <h3 class="press-start-2p-regular">&nbsp;NEXT&nbsp;</h3>
+            <img id="next" src="pieces/O.png" width="70">
+            <br><br>
+            <button onclick="endgameP()">Pause & <br>End Game</button>
+            <br><br>
+            <button onclick="endgame()">End Game</button>
+        </div>
+        <canvas width="240" height="400" id="tetris"></canvas>
+    </div>
+
+    </canvas>
+    <table>
+		<tr>
+			<th>
+				<p><b>Controls:</b></p>
+			</th>
+            <th>
+                <p><b>High Score:</b></p>
+            </th>
+            <th>
+                <p><b>How to Play:</b></p>
+            </th>
+		</tr>
+		<tr>
+			<th>
+				<button onclick="document.getElementById('controls').showModal()">Show Controls</button>
+			</th>
+            <th>
+                <span id="highscore">N/A</span>
+            </th>
+            <th>
+                <button id="howtoplayBTN">Show How to Play</button>
+            </th>
+		</tr>
+	</table>
+    <dialog id="controls">
+        <h3>Controls</h3>
+        To move the block left, use <b>the left arrow.</b> When trying to move right, use the<br>
+        <b>right arrow.</b> If your trying to make the block go down (to speed up the process),<br>
+        be sure to use the <b>down arrow.</b> Don't worry if a game is too long, once your fine<br>
+        with your score, just click the <b>End Game button.</b>
+        <br><br>
+        <button onclick="document.getElementById('controls').close()">Close</button>
+    </dialog>
+    <dialog id="pause">
+        <h3>Paused</h3>
+        The game has been paused for your pleasure until you press the following button:
+        <br><br>
+        <button onclick="unpause()">Unpause</button>
+    </dialog>
+    <br><br>
+    <table class="gamesTable">
+        <caption><button id="gamesBTN" style="width: 100%; cursor: pointer; background-color: transparent; border: 0;">GAMES</button></caption>
+        <thead>
+            <tr class="gamesTableTH" class="gamesTableHide" style="display: table-row;" align="middle">
+                <th><a href="https://agentn86.github.io/js-minesweeper">Minesweeper</a></th>
+                <th><a href="https://agentn86.github.io/one-second-game">One Second Game</a></th>
+            </tr>
+            <tr class="gamesTableTH shader" align="middle">
+                <th><a href="https://agentn86.github.io/tetris-html">Tetris</a></th>
+                <th><i>Coming Soon!</i></th>
+            </tr>
+        </thead>
+    </table>
+    <script src="./script.js"></script>
+</body>
+</html>
